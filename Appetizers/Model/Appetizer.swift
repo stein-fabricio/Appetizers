@@ -16,7 +16,7 @@ import SwiftData
 //        self.timestamp = timestamp
 //    }
 //}
-struct Appetizer: Identifiable, Decodable { /// we only need to decode json. If both, Codable.
+struct Appetizer: Identifiable, Decodable, Hashable { /// we only need to decode json. If both, Codable.
     let id: Int
     let name: String
     let description: String
@@ -43,4 +43,31 @@ struct MockData {
                                            protein: 50)
     
     static let appetizers = [sampleAppetizer, sampleAppetizer, sampleAppetizer, sampleAppetizer]
+    
+    static let orderItemOne = Appetizer(id: 0001,
+                                           name: "Test Appetizers One",
+                                           description: "This is the description for my appetizer. Its yummy.",
+                                           price: 9.99,
+                                           imageURL: "",
+                                           calories: 12,
+                                           carbs: 34,
+                                           protein: 50)
+    static let orderItemTwo = Appetizer(id: 0002,
+                                           name: "Test Appetizers Two",
+                                           description: "This is the description for my appetizer. Its yummy.",
+                                           price: 9.99,
+                                           imageURL: "",
+                                           calories: 12,
+                                           carbs: 34,
+                                           protein: 50)
+    static let orderItemThree = Appetizer(id: 0003,
+                                           name: "Test Appetizers Three",
+                                           description: "This is the description for my appetizer. Its yummy.",
+                                           price: 9.99,
+                                           imageURL: "",
+                                           calories: 12,
+                                           carbs: 34,
+                                           protein: 50)
+    
+    static let orderItems = [orderItemOne, orderItemTwo, orderItemThree]
 }
